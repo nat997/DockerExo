@@ -1,0 +1,14 @@
+cat /etc/nginx/sites-available/default
+
+cp /etc/nginx/sites-available/default ./nginx.conf
+
+
+dans le conf 
+
+server {
+    listen 80;
+    server_name localhost;
+    location /proxy-redirection {
+        proxy_pass http://python-app:5000/;
+    }
+}
